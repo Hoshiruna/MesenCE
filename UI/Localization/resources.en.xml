@@ -849,10 +849,10 @@
 			<Control ID="btnCancel">Cancel</Control>
 		</Form>
 		<Form ID="AboutWindow">
-			<Control ID="wndTitle">About - MesenCE</Control>
-			<Control ID="lblName">Mesen Community Edition</Control>
+			<Control ID="wndTitle">About - Mesen-GM</Control>
+			<Control ID="lblName">Mesen-GM</Control>
 			<Control ID="lblWebsite">Website:</Control>
-			<Control ID="lblLink">github.com/nesdev-org/MesenCE</Control>
+			<Control ID="lblLink">github.com/Hoshiruna/MesenGM</Control>
 			<Control ID="lblVersion">Version:</Control>
 			<Control ID="lblBuildDate">Build Date:</Control>
 			<Control ID="lblCommitId">Commit ID:</Control>
@@ -888,7 +888,7 @@
 			<Control ID="btnCancel">Cancel</Control>
 		</Form>
 		<Form ID="UpdatePromptWindow">
-			<Control ID="wndTitle">MesenCE Updater</Control>
+			<Control ID="wndTitle">Mesen-GM Updater</Control>
 			<Control ID="lblLatestVersion">Latest version:</Control>
 			<Control ID="lblInstalledVersion">Installed version:</Control>
 			<Control ID="lblNewVersionAvailable">A new version of Mesen is available</Control>
@@ -897,8 +897,8 @@
 			<Control ID="btnCancel">Cancel</Control>
 		</Form>
 		<Form ID="SetupWizardWindow">
-			<Control ID="wndTitle">MesenCE</Control>
-			<Control ID="lblMesen">MesenCE - Emulator</Control>
+			<Control ID="wndTitle">Mesen-GM</Control>
+			<Control ID="lblMesen">Mesen-GM - Emulator</Control>
 			<Control ID="lblConfigWizard">Configuration</Control>
 			<Control ID="lblInitialSetup">Please take a moment to perform Mesen's initial setup.</Control>
 			<Control ID="lblStorageLocation">Data Storage Location</Control>
@@ -971,6 +971,15 @@
 		<Form ID="SelectRomWindow">
 			<Control ID="wndTitle">Select rom...</Control>
 			<Control ID="lblSearch">Search:</Control>
+			<Control ID="btnOK">OK</Control>
+			<Control ID="btnCancel">Cancel</Control>
+		</Form>
+
+		<Form ID="SelectBinFileConsoleTypeWindow">
+			<Control ID="wndTitle">Select console type</Control>
+			<Control ID="lblPrompt">Select the console type to use when opening this .bin file.</Control>
+			<Control ID="lblConsoleType">Console type:</Control>
+			<Control ID="chkRememberSelection">Remember this selection for this .bin file</Control>
 			<Control ID="btnOK">OK</Control>
 			<Control ID="btnCancel">Cancel</Control>
 		</Form>
