@@ -1,11 +1,10 @@
-﻿using Mesen.Interop;
-using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using Mesen.Interop;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Mesen.Config
 {
@@ -33,6 +32,7 @@ namespace Mesen.Config
 		[ObservableProperty] public partial ConsoleRegion Region { get; set; } = ConsoleRegion.Auto;
 
 		//Video
+		[ObservableProperty] public partial SnesColorCorrectionMode ColorCorrection { get; set; } = SnesColorCorrectionMode.None;
 		[ObservableProperty] public partial SnesHighResBlendMode HighResBlendMode { get; set; } = SnesHighResBlendMode.None;
 		[ObservableProperty] public partial bool HideBgLayer1 { get; set; } = false;
 		[ObservableProperty] public partial bool HideBgLayer2 { get; set; } = false;
@@ -41,6 +41,7 @@ namespace Mesen.Config
 		[ObservableProperty] public partial bool HideSprites { get; set; } = false;
 		[ObservableProperty] public partial bool DisableFrameSkipping { get; set; } = false;
 		[ObservableProperty] public partial bool ForceFixedResolution { get; set; } = false;
+		[ObservableProperty] public partial bool RemoveSpriteLimit { get; set; } = false;
 
 		[ObservableProperty] public partial OverscanConfig Overscan { get; set; } = new() { Top = 7, Bottom = 8 };
 
@@ -92,6 +93,7 @@ namespace Mesen.Config
 
 				AllowInvalidInput = this.AllowInvalidInput,
 
+				ColorCorrection = this.ColorCorrection,
 				HighResBlendMode = this.HighResBlendMode,
 				HideBgLayer1 = this.HideBgLayer1,
 				HideBgLayer2 = this.HideBgLayer2,
@@ -101,6 +103,7 @@ namespace Mesen.Config
 
 				DisableFrameSkipping = DisableFrameSkipping,
 				ForceFixedResolution = ForceFixedResolution,
+				RemoveSpriteLimit = RemoveSpriteLimit,
 
 				Overscan = Overscan.ToInterop(),
 
@@ -152,6 +155,7 @@ namespace Mesen.Config
 
 		[MarshalAs(UnmanagedType.I1)] public bool AllowInvalidInput;
 
+		public SnesColorCorrectionMode ColorCorrection;
 		public SnesHighResBlendMode HighResBlendMode;
 		[MarshalAs(UnmanagedType.I1)] public bool HideBgLayer1;
 		[MarshalAs(UnmanagedType.I1)] public bool HideBgLayer2;
@@ -160,6 +164,7 @@ namespace Mesen.Config
 		[MarshalAs(UnmanagedType.I1)] public bool HideSprites;
 		[MarshalAs(UnmanagedType.I1)] public bool DisableFrameSkipping;
 		[MarshalAs(UnmanagedType.I1)] public bool ForceFixedResolution;
+		[MarshalAs(UnmanagedType.I1)] public bool RemoveSpriteLimit;
 
 		public InteropOverscanDimensions Overscan;
 
@@ -198,5 +203,12 @@ namespace Mesen.Config
 		None,
 		BlendAll,
 		BlendEvenOdd
+	}
+
+	public enum SnesColorCorrectionMode
+	{
+		None,
+		NtscBlackLevel,
+		DeepBlackBoost
 	}
 }

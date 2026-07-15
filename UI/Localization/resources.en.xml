@@ -273,6 +273,7 @@
 			<Control ID="lblMiscSettings">Miscellaneous Settings</Control>
 
 			<Control ID="lblHighResBlendMode">High resolution blend mode: </Control>
+			<Control ID="lblColorCorrection">Color correction: </Control>
 			<Control ID="chkHideBgLayer1">Hide background layer 1</Control>
 			<Control ID="chkHideBgLayer2">Hide background layer 2</Control>
 			<Control ID="chkHideBgLayer3">Hide background layer 3</Control>
@@ -281,6 +282,7 @@
 			<Control ID="lblOverscan">Overscan</Control>
 			<Control ID="chkDisableFrameSkipping">Disable frame skipping when fast forwarding</Control>
 			<Control ID="chkForceFixedResolution">Use fixed output resolution (2x scale, ≈512x478)</Control>
+			<Control ID="chkRemoveSpriteLimit">Remove sprite limit</Control>
 		</Form>
 		<Form ID="NesConfigView">
 			<Control ID="tpgGeneral">General</Control>
@@ -373,7 +375,11 @@
 			<Control ID="lblRamPowerOnState">Default power on state for RAM: </Control>
 			<Control ID="grpGeneral">General</Control>
 			<Control ID="chkAllowInvalidInput">Allow invalid input (e.g Down + Up or Left + Right at the same time)</Control>
-			
+
+			<Control ID="grpOverclocking">Overclocking</Control>
+			<Control ID="lblOverclockHint">Overclocking can help reduce or remove slowdowns in games (but it can also cause issues). To overclock, increase the value below.&#13;Note: Overclocking is not available in SGB mode.</Control>
+			<Control ID="lblOverclockScanlineCount">Additional scanlines:</Control>
+
 			<Control ID="tpgVideo">Video</Control>
 			<Control ID="lblGameboyPalette">Game Boy (DMG) Palette</Control>
 			<Control ID="lblGbBackground">Background:</Control>
@@ -391,7 +397,8 @@
 			<Control ID="chkGbcAdjustColors">Enable GBC LCD color emulation</Control>
 			<Control ID="chkDisableBackground">Disable background</Control>
 			<Control ID="chkDisableSprites">Disable sprites</Control>
-
+			<Control ID="chkRemoveSpriteLimit">Remove sprite limit</Control>
+			
 			<Control ID="lblMiscSettings">Miscellaneous Settings</Control>
 			<Control ID="chkHideSgbBorders">Hide Super Game Boy borders</Control>
 
@@ -2502,6 +2509,11 @@ E
 			<Value ID="None">None (default)</Value>
 			<Value ID="BlendAll">Blend entire screen</Value>
 			<Value ID="BlendEvenOdd">Blend even/odd columns (fake transparency)</Value>
+		</Enum>
+		<Enum ID="SnesColorCorrectionMode">
+			<Value ID="None">None (default)</Value>
+			<Value ID="NtscBlackLevel">NTSC-U black level</Value>
+			<Value ID="DeepBlackBoost">Deep black boost (ares)</Value>
 		</Enum>
 		<Enum ID="PceConsoleType">
 			<Value ID="Auto">Auto (recommended)</Value>
